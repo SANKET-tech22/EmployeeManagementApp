@@ -1,0 +1,31 @@
+# Node dependencies
+node_modules/
+
+# Frontend build output
+frontend/dist/
+frontend/build/
+
+# Env files (secrets)
+.env
+.env.*
+*.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Docker local files
+docker-compose.override.yml
+
+# Kubernetes local configs
+*.local.yaml
