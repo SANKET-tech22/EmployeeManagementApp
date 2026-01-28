@@ -2,7 +2,15 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
-const API_URL = import.meta.env.VITE_API_URL || "http://backend:5000";
+// Intial changes in the url is as below
+// const API_URL = import.meta.env.VITE_API_URL || "http://backend:5000";
+
+// Done the changes in the below url to use the nginx proxy
+const API_URL = "";
+
+axios.get("/api/employees")
+axios.post("/api/employees", form)
+
 
 function App() {
   const [employees, setEmployees] = useState([]);
