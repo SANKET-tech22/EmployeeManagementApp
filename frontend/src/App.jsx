@@ -2,15 +2,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
-// Intial changes in the url is as below
-// const API_URL = import.meta.env.VITE_API_URL || "http://backend:5000";
-
-// Done the changes in the below url to use the nginx proxy
+// Use nginx reverse proxy
 const API_URL = "";
-
-axios.get("/api/employees")
-axios.post("/api/employees", form)
-
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -21,7 +14,7 @@ function App() {
   });
 
   const fetchEmployees = async () => {
-    const res = await axios.get(`${API_URL}/api/employees`);
+    const res = await axios.get(`/api/employees`);
     setEmployees(res.data);
   };
 
@@ -35,7 +28,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`${API_URL}/api/employees`, form);
+    await axios.post(`/api/employees`, form);
     setForm({ name: '', email: '', department: '' });
     fetchEmployees();
   };
