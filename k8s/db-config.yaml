@@ -4,6 +4,6 @@ metadata:
     name: db-config
     namespace: employee-app
 data:
-  POSTGRESS_DB: employees
+  POSTGRES_DB: employees
   DB_HOST: postgres
   DB_NAME: employees
