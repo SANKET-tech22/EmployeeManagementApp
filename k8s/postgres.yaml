@@ -36,12 +36,20 @@ spec:
           - secretRef:
               name: db-secret
         volumeMounts:
-          - mountPath: /var/lib/postgresql/data
-            name: postgres-storage
+          - name: postgres-storage
+            mountPath: /var/lib/postgresql/data
+
+          - name: init-script
+            mountPath: /docker-entrypoint-initdb.d
+
       volumes:
         - name: postgres-storage
           persistentVolumeClaim:
             claimName: postgres-pvc
+
+        - name: init-script
+          configMap:
+            name: db-init-script
 ---
 apiVersion: v1
 kind: Service
