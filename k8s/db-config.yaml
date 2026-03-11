@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: db-config
+    namespace: employee-app
+data:
+  POSTGRESS_DB: employees
+  DB_HOST: postgres
+  DB_NAME: employees
